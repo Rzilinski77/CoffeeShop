@@ -1,0 +1,12 @@
+﻿body {
+}
+
+h2 {
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+label {
+    display: inline-block;
+    width: 120px;
+}
