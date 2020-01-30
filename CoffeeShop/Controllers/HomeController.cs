@@ -23,43 +23,62 @@ namespace CoffeeShop.Controllers
             return View();
         }
 
-        //need one action to load our RegistrationPage, also need a view
-        public IActionResult Registration()
+        //need one action to load our RegisterPage, also need a view
+        public IActionResult Register()
         {
             //if no view is specified to load our Registration, also need a view
             return View();
+        }
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        public IActionResult Shop(string username)
+        {
+            // Use my context class to pull in my DataBase data
+            ShopDBContext db = new ShopDBContext();
+
+            // make an indiviodual Person object to store my result in
+            Users matchedUser = new Users();
+
+            // make an indiviodual Person object to store my result in
+            TempData["Registered"] = false;
+
+            // i need to find my result in my DB
+            foreach (Users user in db.Users)
+            {
+                // as i iterate through the collection, I want to find the correct result
+                if (user.Username == username)
+                {
+                    // if you find a match, assign that value to your temp Person object
+                    matchedUser = user;
+                    //you found a match, set your TempData to true
+                    //this allows us to display certain HTML
+                    TempData["Registered"] = true;
+                }
+            }
+            // pass the object with the data to the view to be displayed
+            return View(matchedUser);
         }
         public IActionResult PasswordError()
         {
             return View("PasswordError");
         }
         //need one action to take those user inputs, and display the user name, in a new view
-        public IActionResult Welcome(
-            string firstname,
-            string lastname,
-            string email,
-            string phonenumber,
-            string phonetype,
-            string username, 
-            string password, 
-            string passwordtwo)
+        public IActionResult MakeNewUser(Users Users)
         {
-            ViewBag.FirstName = firstname;
-            ViewBag.LastName = lastname;
-            ViewBag.Email = email;
-            ViewBag.UserName = username;
+            //use the RegisterTestContext object, to access the DB data
+            ShopDBContext db = new ShopDBContext();
 
-            if (password == passwordtwo)
-            {
-                return View();
-            }
-            else
-            {
-                return PasswordError();
-            }
+            //we use our database object, to access the table we want to write new data to
+            db.Users.Add(Users);
 
-
+            //we must SaveChanges that we just made to our DataBase
+            db.SaveChanges();
+            return View("Shop", Users);
         }
+
         public IActionResult Privacy()
         {
             return View();

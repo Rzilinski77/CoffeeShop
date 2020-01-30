@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Login</h1>
+<!--onsubmit calls JS function on form submit-->
+<form asp-controller="Home" asp-action="Shop">
+    <fieldset>
+        <div><label>User Name:&nbsp;</label><input type="text" name="username" required></div>
+        <div><label>Password:&nbsp;</label><input type="password" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"></div>
+        <input type="submit" class="btn btn-primary" />
+    </fieldset>
+</form>
+
+

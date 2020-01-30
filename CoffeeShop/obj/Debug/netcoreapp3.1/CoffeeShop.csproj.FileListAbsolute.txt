@@ -135,6 +135,8 @@ C:\Users\rzili\source\repos\CoffeeShop\CoffeeShop\obj\Debug\netcoreapp3.1\Coffee
 C:\Users\rzili\source\repos\CoffeeShop\CoffeeShop\obj\Debug\netcoreapp3.1\CoffeeShop.Views.pdb
 C:\Users\rzili\source\repos\CoffeeShop\CoffeeShop\obj\Debug\netcoreapp3.1\CoffeeShop.dll
 C:\Users\rzili\source\repos\CoffeeShop\CoffeeShop\obj\Debug\netcoreapp3.1\CoffeeShop.pdb
-C:\Users\rzili\source\repos\CoffeeShop\CoffeeShop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Welcome.cshtml.g.cs
-C:\Users\rzili\source\repos\CoffeeShop\CoffeeShop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Registration.cshtml.g.cs
 C:\Users\rzili\source\repos\CoffeeShop\CoffeeShop\obj\Debug\netcoreapp3.1\Razor\Views\Home\PasswordError.cshtml.g.cs
+C:\Users\rzili\source\repos\CoffeeShop\CoffeeShop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Register.cshtml.g.cs
+C:\Users\rzili\source\repos\CoffeeShop\CoffeeShop\obj\Debug\netcoreapp3.1\Razor\Views\Home\MakeNewUser.cshtml.g.cs
+C:\Users\rzili\source\repos\CoffeeShop\CoffeeShop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs
+C:\Users\rzili\source\repos\CoffeeShop\CoffeeShop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Shop.cshtml.g.cs

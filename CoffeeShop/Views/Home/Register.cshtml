@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/css/RegisterStyleSheet.css" rel="stylesheet" />
+
+<h1 class="title">Register</h1>
+
+<form asp-controller="Home" asp-action="MakeNewUser" onsubmit="Validate()">
+    @*we use the name attribute to map this text input to our parameter in
+        the back end controller*@
+    @*give each input a unique name to insure proper mapping in the back end*@
+    <fieldset>
+        <legend class="legend" font-size:20px;">Personal Info</legend>
+        <div><label>First Name:</label><input type="text" name="Firstname" required pattern="[A-Za-z]+"></div>
+        <div><label>Last Name:</label><input type="text" name="Lastname" pattern="[A-Za-z]+"></div>
+        <div><label>Email:</label><input type="email" name="Email" required></div>
+        <div>
+            <label>Phone Number:</label><input type="text" name="Phonenumber" required pattern="^[2-9]\d{2}-\d{3}-\d{4}$">
+            <input type="radio" name="Phonetype" value="Home" checked> Home
+            <input type="radio" name="Phonetype" value="Cell"> Cell
+            <p>Ex: (555-555-5555)</p>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend class="legend" font-size:20px;">User Info</legend>
+        <div><label>User Name:</label><input type="text" name="Username" required></div>
+        <div><label>Password:</label><input type="password" name="Password" id="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"></div>
+        <div><label>Confirm Password:</label><input type="password" name="ConfirmPassword" id="ConfirmPassword" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"></div>
+    </fieldset>
+    <br />
+    @*use the input type submit to submit our form to the assigned controller/action*@
+    <input type="submit" class="btn btn-primary" .btn-lg />
+</form>
+
+<script>
+    function Validate() {
+        //console.log to know I'm entering this function
+        console.log("Validate function");
+
+        //grab the first input id="Password"
+        //use querySelector() to grab the value from my input
+
+        var password = document.querySelector("#Password").value;
+
+        console.log(password)
+
+        //grab the second input id="ConfirmPassword"
+
+        var confirmPassword = document.querySelector("#ConfirmPassword").value;
+
+        console.log(confirmPassword)
+
+        if (password === confirmPassword) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+</script>

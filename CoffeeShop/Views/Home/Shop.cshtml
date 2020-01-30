@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "Shop";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model ShopDBContext
+<h1>Shop</h1>
+<br />
+<table>
+    <!--the tr gave us a table row to keep seperate from other tables rows-->
+    <tr>
+        <!--the tr gave us a table header allows us to name our columns of data-->
+        <th><h1>Name&nbsp;</h1></th>
+        <th><h1>Description&nbsp;</h1></th>
+    </tr>
+    @foreach (Items item in Model.Items)
+    {
+        <tr>
+            <td>@item.Name&nbsp;</td>
+            <td>@item.Description&nbsp;</td>
+            
+            <td><button>Select</button></td>
+        </tr>
+    }
+</table>
+
